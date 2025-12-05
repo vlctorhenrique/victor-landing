@@ -46,6 +46,6 @@ body {
 }
 
 .typewriter-caret {
-  border-right-width: 2px;
+  border-right-width: 2px solid #c084fc; /*roxo bonito*/
   animation: caret-blink 1s step-end infinite;
 }

@@ -23,13 +23,11 @@ function Typewriter() {
   useEffect(() => {
     const current = phrases[index];
 
-    // Pausa no fim da palavra
     if (!deleting && subIndex === current.length) {
-      const timeout = setTimeout(() => setDeleting(true), 1000);
+      const timeout = setTimeout(() => setDeleting(true), 900);
       return () => clearTimeout(timeout);
     }
 
-    // Troca de palavra
     if (deleting && subIndex === 0) {
       setDeleting(false);
       setIndex((prev) => (prev + 1) % phrases.length);
@@ -38,7 +36,7 @@ function Typewriter() {
 
     const timeout = setTimeout(
       () => setSubIndex((prev) => prev + (deleting ? -1 : 1)),
-      deleting ? 40 : 120
+      deleting ? 40 : 110
     );
 
     return () => clearTimeout(timeout);
@@ -46,8 +44,11 @@ function Typewriter() {
 
   return (
     <span
-      className="inline-block pr-1 border-r-2 border-purple-400 typewriter-caret"
-      style={{ minWidth: `${longestPhrase.length}ch` }}
+      className="typewriter-caret inline-block"
+      style={{
+        minWidth: "18ch",  // TAMANHO FIXO IDEAL PARA SUAS FRASES
+        whiteSpace: "nowrap",
+      }}
     >
       {phrases[index].substring(0, subIndex)}
     </span>

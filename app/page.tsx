@@ -44,17 +44,21 @@ function Typewriter() {
 
   const text = phrases[index].substring(0, subIndex);
 
-  return (
+   return (
     <span
-      className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300"
+      className="inline-flex items-baseline"
       style={{
-        minWidth: `${longestPhrase.length}ch`,
+        minWidth: "18ch",
         whiteSpace: "nowrap",
       }}
     >
-      {text}
-      {/* cursor separado, só ele pisca */}
-      <span className="typewriter-caret ml-[2px]">|</span>
+      {/* texto com gradiente */}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300">
+        {text}
+      </span>
+
+      {/* cursor separado, com cor própria */}
+      <span className="typewriter-caret ml-[2px] text-purple-300">|</span>
     </span>
   );
 }

@@ -181,42 +181,38 @@ export default function Home() {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl font-semibold mb-3">Quem é o Victor?</h2>
 
-            {/* Texto */}
-            <div>
-              <h2 className="text-2xl font-semibold mb-3">Quem é o Victor?</h2>
-              <p className="text-gray-300 text-sm md:text-base mb-4">
-                Sou desenvolvedor focado em transformar necessidades de negócios
-                em soluções práticas: sites rápidos, bots que realmente atendem
-                clientes e automações que economizam horas de trabalho por
-                semana.
-              </p>
+            <p className="text-gray-300 text-sm md:text-base mb-4">
+              Sou desenvolvedor focado em transformar necessidades de negócios em
+              soluções práticas: sites rápidos, bots que realmente atendem clientes e
+              automações que economizam horas de trabalho por semana.
+            </p>
 
-              <p className="text-gray-400 text-sm md:text-base mb-4">
-                Curto especialmente juntar{" "}
-                <span className="text-purple-300">programação</span> com{" "}
-                <span className="text-cyan-300">design</span> e{" "}
-                <span className="text-pink-300">inteligência artificial</span>,
-                criando experiências que são bonitas, boas de usar e que
-                resolvem problemas reais.
-              </p>
+            <p className="text-gray-400 text-sm md:text-base mb-6">
+              Curto especialmente juntar{" "}
+              <span className="text-purple-300">programação</span> com{" "}
+              <span className="text-cyan-300">design</span> e{" "}
+              <span className="text-pink-300">inteligência artificial</span>,
+              criando experiências que são bonitas, eficientes e resolvem problemas reais.
+            </p>
 
-              <div className="flex flex-wrap gap-2 mt-2">
-                {[
-                  "Next.js",
-                  "Node.js",
-                  "Tailwind CSS",
-                  "Bots de WhatsApp",
-                  "OpenAI API",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs md:text-[13px] px-3 py-1 rounded-full border border-white/10 bg-white/5 text-gray-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap justify-center gap-2 mt-2">
+              {[
+                "Next.js",
+                "Node.js",
+                "Tailwind CSS",
+                "Bots de WhatsApp",
+                "OpenAI API",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs md:text-[13px] px-3 py-1 rounded-full border border-white/10 bg-white/5 text-gray-200"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         </motion.section>

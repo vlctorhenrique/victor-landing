@@ -42,15 +42,19 @@ function Typewriter() {
     return () => clearTimeout(timeout);
   }, [subIndex, deleting, index]);
 
+  const text = phrases[index].substring(0, subIndex);
+
   return (
     <span
-      className="typewriter-caret inline-block"
+      className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300"
       style={{
-        minWidth: "18ch",  // TAMANHO FIXO IDEAL PARA SUAS FRASES
+        minWidth: `${longestPhrase.length}ch`,
         whiteSpace: "nowrap",
       }}
     >
-      {phrases[index].substring(0, subIndex)}
+      {text}
+      {/* cursor separado, só ele pisca */}
+      <span className="typewriter-caret ml-[2px]">|</span>
     </span>
   );
 }
@@ -105,10 +109,9 @@ export default function Home() {
               Desenvolvedor • Web • IA • Automação
             </p>
 
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Eu ajudo negócios a vender mais com{" "}
-              <Typewriter />
-            </h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Eu ajudo negócios a vender mais com <Typewriter />
+          </h1>
 
             <p className="text-gray-300 text-base md:text-lg max-w-xl mb-8">
               Crio landings modernas, automações em WhatsApp e sistemas com IA

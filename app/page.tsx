@@ -159,10 +159,10 @@ export default function Home() {
         {/* SOBRE MIM */}
         <motion.section
           id="sobre"
-          className="py-10 md:py-12"
-          initial={{ opacity: 0, y: 30 }}
+          className="py-16 md:py-20"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6 }}
         >
           <div className="flex flex-col md:flex-row items-start gap-8">

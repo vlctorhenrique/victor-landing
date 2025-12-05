@@ -184,9 +184,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-start gap-8">
             {/* Avatar / futuro cartoon */}
             <div className="w-28 h-28 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-400 p-[2px] shrink-0">
-              <div className="w-full h-full rounded-full bg-[#050816] flex items-center justify-center text-xs text-gray-400 text-center px-2">
-                Sua foto / avatar aqui
-              </div>
+              
             </div>
 
             {/* Texto */}

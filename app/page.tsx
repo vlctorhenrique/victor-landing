@@ -1,6 +1,6 @@
 "use client";
 
-import link from "next/link";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiGlobe, FiZap, FiCpu } from "react-icons/fi";

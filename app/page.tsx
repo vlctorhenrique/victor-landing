@@ -1,9 +1,10 @@
 "use client";
 
+import link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiGlobe, FiZap, FiCpu } from "react-icons/fi";
-import link from "next/link";
+
 
 const phrases = [
   "sites modernos",
@@ -277,24 +278,11 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* PROJETOS */}
-        <motion.section
-          id="projetos"
-          className="py-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-semibold mb-4">Projetos em destaque</h2>
-          <p className="text-gray-400 mb-8">
-            Alguns tipos de soluções que eu já construí e posso adaptar para o
-            seu cenário.
-          </p>
-
-          <div className="space-y-4">
+        <div className="space-y-4">
+          {/* PROJETO 1 */}
+          <Link href="/projetos/bot-grafica">
             <motion.div
-              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5 cursor-pointer"
               whileHover={{ y: -3, scale: 1.01 }}
               transition={{ duration: 0.15 }}
             >
@@ -302,16 +290,19 @@ export default function Home() {
                 Bot comercial para gráfica
               </h3>
               <p className="text-gray-400 text-sm mb-2">
-                Bot no WhatsApp que responde orçamentos, envia catálogo de
-                produtos, coleta dados do cliente e salva tudo em uma planilha.
+                Bot no WhatsApp que responde orçamentos, envia catálogo de produtos,
+                coleta dados do cliente e salva tudo em uma planilha.
               </p>
               <p className="text-xs text-gray-500">
-                Stack: Node.js, Venom-Bot, Google Sheets API, OpenAI.
+                Clique para ver detalhes do projeto.
               </p>
             </motion.div>
+          </Link>
 
+          {/* PROJETO 2 */}
+          <Link href="/projetos/gerador-posts-ia">
             <motion.div
-              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5 cursor-pointer"
               whileHover={{ y: -3, scale: 1.01 }}
               transition={{ duration: 0.15 }}
             >
@@ -319,15 +310,15 @@ export default function Home() {
                 Gerador de posts com IA
               </h3>
               <p className="text-gray-400 text-sm mb-2">
-                Ferramenta que cria textos e ideias de posts para Instagram com
-                base na área do negócio, tom de voz e público alvo.
+                Ferramenta que cria textos e ideias de posts para Instagram com base
+                na área do negócio, tom de voz e público alvo.
               </p>
               <p className="text-xs text-gray-500">
-                Stack: Next.js, Tailwind, OpenAI API.
+                Clique para ver detalhes do projeto.
               </p>
             </motion.div>
-          </div>
-        </motion.section>
+          </Link>
+        </div>
 
         {/* CONTATO / FOOTER */}
         <motion.section

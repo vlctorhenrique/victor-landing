@@ -101,7 +101,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 pt-24">
         {/* HERO */}
         <motion.section
-          className="min-h-[80vh] py-16 md:py-24 flex flex-col md:flex-row items-center gap-12"
+          className="min-h-[80vh] pt-24 pb-16 md:pt-28 md:pb-24 flex flex-col md:flex-row items-center gap-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}

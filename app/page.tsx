@@ -10,6 +10,11 @@ const phrases = [
   "ferramentas com IA",
 ];
 
+const longestPhrase = phrases.reduce(
+  (acc, cur) => (cur.length > acc.length ? cur : acc),
+  ""
+);
+
 function Typewriter() {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -18,13 +23,11 @@ function Typewriter() {
   useEffect(() => {
     const current = phrases[index];
 
-    // Pausa no fim da palavra
     if (!deleting && subIndex === current.length) {
       const timeout = setTimeout(() => setDeleting(true), 1000);
       return () => clearTimeout(timeout);
     }
 
-    // Troca para a próxima palavra
     if (deleting && subIndex === 0) {
       setDeleting(false);
       setIndex((prev) => (prev + 1) % phrases.length);
@@ -40,7 +43,10 @@ function Typewriter() {
   }, [subIndex, deleting, index]);
 
   return (
-    <span className="border-r border-purple-400 pr-1">
+    <span
+      className="inline-block border-r border-purple-400 pr-1"
+      style={{ minWidth: `${longestPhrase.length}ch` }}
+    >
       {phrases[index].substring(0, subIndex)}
     </span>
   );
@@ -84,11 +90,12 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 pt-24">
         {/* HERO */}
         <motion.section
-          className="py-16 md:py-24 flex flex-col md:flex-row items-center gap-12"
+          className="min-h-[80vh] py-16 md:py-24 flex flex-col md:flex-row items-center gap-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
+
           {/* Texto */}
           <div className="flex-1">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-300 mb-4">

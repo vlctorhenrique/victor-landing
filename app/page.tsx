@@ -23,11 +23,13 @@ function Typewriter() {
   useEffect(() => {
     const current = phrases[index];
 
+    // Pausa no fim da palavra
     if (!deleting && subIndex === current.length) {
       const timeout = setTimeout(() => setDeleting(true), 1000);
       return () => clearTimeout(timeout);
     }
 
+    // Troca de palavra
     if (deleting && subIndex === 0) {
       setDeleting(false);
       setIndex((prev) => (prev + 1) % phrases.length);
@@ -44,7 +46,7 @@ function Typewriter() {
 
   return (
     <span
-      className="inline-block border-r border-purple-400 pr-1"
+      className="inline-block pr-1 border-r-2 border-purple-400 typewriter-caret"
       style={{ minWidth: `${longestPhrase.length}ch` }}
     >
       {phrases[index].substring(0, subIndex)}

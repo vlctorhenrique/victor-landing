@@ -35,3 +35,17 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes caret-blink {
+  0%, 45% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-caret {
+  border-right-width: 2px;
+  animation: caret-blink 1s step-end infinite;
+}

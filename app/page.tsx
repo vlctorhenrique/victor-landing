@@ -107,9 +107,7 @@ export default function Home() {
 
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
               Eu ajudo negócios a vender mais com{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300">
-                <Typewriter />
-              </span>
+              <Typewriter />
             </h1>
 
             <p className="text-gray-300 text-base md:text-lg max-w-xl mb-8">

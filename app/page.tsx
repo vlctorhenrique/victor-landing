@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiGlobe, FiZap, FiCpu } from "react-icons/fi";
+import link from "next/link";
 
 const phrases = [
   "sites modernos",

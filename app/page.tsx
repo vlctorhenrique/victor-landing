@@ -113,9 +113,10 @@ export default function Home() {
               Desenvolvedor • Web • IA • Automação
             </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug mb-4">
             Eu ajudo negócios a vender mais com <Typewriter />
           </h1>
+
 
             <p className="text-gray-300 text-base md:text-lg max-w-xl mb-8">
               Crio landings modernas, automações em WhatsApp e sistemas com IA

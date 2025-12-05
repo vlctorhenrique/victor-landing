@@ -181,11 +181,6 @@ export default function Home() {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            {/* Avatar / futuro cartoon */}
-            <div className="w-28 h-28 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-400 p-[2px] shrink-0">
-              
-            </div>
 
             {/* Texto */}
             <div>

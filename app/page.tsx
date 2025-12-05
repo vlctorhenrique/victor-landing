@@ -48,7 +48,7 @@ function Typewriter() {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#050816] via-[#050816] to-[#020617] text-white">
       {/* NAV FIXA */}
       <div className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#050816]/80 backdrop-blur">
         <div className="max-w-5xl mx-auto px-6">
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CONTEÚDO */}
+      {/* CONTEÚDO PRINCIPAL */}
       <div className="max-w-5xl mx-auto px-6 pt-24">
         {/* HERO */}
         <motion.section
@@ -90,14 +90,14 @@ export default function Home() {
           transition={{ duration: 0.7 }}
         >
           {/* Texto */}
-          <div className="flex-1" id="sobre">
+          <div className="flex-1">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-300 mb-4">
               Desenvolvedor • Web • IA • Automação
             </p>
 
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
               Eu ajudo negócios a vender mais com{" "}
-              <span className="text-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300">
                 <Typewriter />
               </span>
             </h1>
@@ -110,7 +110,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://wa.me/5519982027560"
+                href="https://wa.me/5551998227560"
                 target="_blank"
                 className="px-7 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-sm font-semibold transition"
               >
@@ -156,6 +156,62 @@ export default function Home() {
           </motion.div>
         </motion.section>
 
+        {/* SOBRE MIM */}
+        <motion.section
+          id="sobre"
+          className="py-10 md:py-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            {/* Avatar / futuro cartoon */}
+            <div className="w-28 h-28 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-400 p-[2px] shrink-0">
+              <div className="w-full h-full rounded-full bg-[#050816] flex items-center justify-center text-xs text-gray-400 text-center px-2">
+                Sua foto / avatar aqui
+              </div>
+            </div>
+
+            {/* Texto */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-3">Quem é o Victor?</h2>
+              <p className="text-gray-300 text-sm md:text-base mb-4">
+                Sou desenvolvedor focado em transformar necessidades de negócios
+                em soluções práticas: sites rápidos, bots que realmente atendem
+                clientes e automações que economizam horas de trabalho por
+                semana.
+              </p>
+
+              <p className="text-gray-400 text-sm md:text-base mb-4">
+                Curto especialmente juntar{" "}
+                <span className="text-purple-300">programação</span> com{" "}
+                <span className="text-cyan-300">design</span> e{" "}
+                <span className="text-pink-300">inteligência artificial</span>,
+                criando experiências que são bonitas, boas de usar e que
+                resolvem problemas reais.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                {[
+                  "Next.js",
+                  "Node.js",
+                  "Tailwind CSS",
+                  "Bots de WhatsApp",
+                  "OpenAI API",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs md:text-[13px] px-3 py-1 rounded-full border border-white/10 bg-white/5 text-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* ESPECIALIDADES */}
         <motion.section
           id="servicos"
@@ -172,25 +228,37 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/5">
+            <motion.div
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ duration: 0.15 }}
+            >
               <FiGlobe className="text-2xl text-cyan-300 mb-3" />
               <h3 className="text-xl font-semibold mb-2">Web</h3>
               <p className="text-gray-400 text-sm">
-                Landing pages, sites institucionais e dashboards modernos prontos
-                para receber tráfego.
+                Landing pages, sites institucionais e dashboards modernos
+                prontos para receber tráfego.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/5">
+            <motion.div
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ duration: 0.15 }}
+            >
               <FiZap className="text-2xl text-purple-300 mb-3" />
               <h3 className="text-xl font-semibold mb-2">Automação</h3>
               <p className="text-gray-400 text-sm">
                 Bots de WhatsApp, integrações com planilhas e sistemas que tiram
                 trabalho repetitivo da sua equipe.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/5">
+            <motion.div
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ duration: 0.15 }}
+            >
               <FiCpu className="text-2xl text-pink-300 mb-3" />
               <h3 className="text-xl font-semibold mb-2">
                 Inteligência Artificial
@@ -199,7 +267,7 @@ export default function Home() {
                 IA para atendimento, geração de conteúdo, análise de dados e
                 fluxos inteligentes para o seu negócio.
               </p>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 
@@ -219,7 +287,11 @@ export default function Home() {
           </p>
 
           <div className="space-y-4">
-            <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/5">
+            <motion.div
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              whileHover={{ y: -3, scale: 1.01 }}
+              transition={{ duration: 0.15 }}
+            >
               <h3 className="text-xl font-semibold mb-2">
                 Bot comercial para gráfica
               </h3>
@@ -230,9 +302,13 @@ export default function Home() {
               <p className="text-xs text-gray-500">
                 Stack: Node.js, Venom-Bot, Google Sheets API, OpenAI.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/5">
+            <motion.div
+              className="bg-[#0B1020] rounded-2xl p-6 border border-white/5"
+              whileHover={{ y: -3, scale: 1.01 }}
+              transition={{ duration: 0.15 }}
+            >
               <h3 className="text-xl font-semibold mb-2">
                 Gerador de posts com IA
               </h3>
@@ -243,7 +319,7 @@ export default function Home() {
               <p className="text-xs text-gray-500">
                 Stack: Next.js, Tailwind, OpenAI API.
               </p>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 
@@ -266,7 +342,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://wa.me/55SEUNUMERO"
+            href="https://wa.me/5519982027560"
             target="_blank"
             className="inline-block px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-sm font-semibold transition"
           >

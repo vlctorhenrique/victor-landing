@@ -135,12 +135,12 @@ export default function Home() {
                 Falar comigo
               </a>
 
-              <a
+              <Link
                 href="#projetos"
                 className="px-7 py-3 rounded-xl border border-purple-500 text-sm font-semibold text-purple-300 hover:bg-purple-500/10 transition"
               >
                 Ver portfólio
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -278,6 +278,15 @@ export default function Home() {
           </div>
         </motion.section>
 
+      <motion.section
+        id="projetos"
+        className="py-16 scroll-mt-24"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl font-semibold mb-4">Projetos em destaque</h2>
         <div className="space-y-4">
           {/* PROJETO 1 */}
           <Link href="/projetos/bot-grafica">
@@ -319,6 +328,7 @@ export default function Home() {
             </motion.div>
           </Link>
         </div>
+      </motion.section>
 
         {/* CONTATO / FOOTER */}
         <motion.section

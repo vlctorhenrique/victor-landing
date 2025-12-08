@@ -287,7 +287,7 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-3xl font-semibold mb-4">Projetos em destaque</h2>
-        <div className="space-y-4">
+        <div className="space-y-6">
           {/* PROJETO 1 */}
           <Link href="/projetos/bot-grafica">
             <motion.div
